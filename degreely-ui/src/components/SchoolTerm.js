@@ -1,4 +1,4 @@
-function Element( props ) {
+function SchoolTerm( props ) {
     return (
         <div>
             test
