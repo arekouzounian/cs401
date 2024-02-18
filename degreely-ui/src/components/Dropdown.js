@@ -5,7 +5,7 @@ const Dropdown = ({ options, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOptionClick = (option) => {
-    setSelectedOption(option);
+    setSelectedOption(option.props.name);
     onSelect(option);
     setIsOpen(false);
   };
@@ -18,7 +18,7 @@ const Dropdown = ({ options, onSelect }) => {
       {isOpen && (
         <ul className="dropdown-menu" style={{listStyleType: 'none'}}>
           {options.map((option, index) => (
-            <li key={index} onClick={() => handleOptionClick(option)}>{option}</li>
+            <li key={index} onClick={() => handleOptionClick(option)}>{option.props.name}</li>
           ))}
         </ul>
       )}

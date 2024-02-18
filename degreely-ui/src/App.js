@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div>
-      <h1>Dropdown Menu Example</h1>
+      <h1>Term Select</h1>
       <Dropdown options={options} onSelect={handleSelect} />
       {(selectedOption && <p>{selectedOption}</p>) || <p>Select a term</p>}
     </div>
