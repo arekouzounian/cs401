@@ -1,7 +1,7 @@
 function Element( props ) {
     return (
         <div>
-            test
+            {props.name}
         </div>
     )
 }
