@@ -1,12 +1,12 @@
 import { Dropdown } from './components/Dropdown';
-import { Element } from './components/Element'
+import { SchoolTerm } from './components/SchoolTerm'
 import { useState } from 'react';
 import './App.css';
 
 function App() {
   const [selectedOption, setSelectedOption] = useState(null);
 
-  const options = [<Element name={'Term 1'}/>, <Element name={'Term 2'}/>, <Element name={'Term 3'}/>];
+  const options = [<SchoolTerm name={'Term 1'}/>, <SchoolTerm name={'Term 2'}/>, <SchoolTerm name={'Term 3'}/>];
 
   const handleSelect = (option) => {
     setSelectedOption(option);

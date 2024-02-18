@@ -6,4 +6,4 @@ function SchoolTerm( props ) {
     )
 }
 
-export { Element }
+export { SchoolTerm }
