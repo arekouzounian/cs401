@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   const [selectedOption, setSelectedOption] = useState(null);
 
-  const options = [<SchoolTerm name={'Term 1'}/>, <SchoolTerm name={'Term 2'}/>, <SchoolTerm name={'Term 3'}/>];
+  const options = [<SchoolTerm name={'Term 1'}/>, <SchoolTerm name={'Term 2'}/>, <SchoolTerm name={'Term 3'}/>, <SchoolTerm name={'Term 4'}/>, <SchoolTerm name={'Term 5'}/>, <SchoolTerm name={'Term 6'}/>, <SchoolTerm name={'Term 7'}/>, ];
 
   const handleSelect = (option) => {
     setSelectedOption(option);
