@@ -608,4 +608,4 @@ const scheduleData = {
     ]
 };
 
-export default scheduleData;
+export {scheduleData};
