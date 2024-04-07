@@ -1,11 +1,20 @@
+import React from 'react';
 import { Box } from '@mui/material';
 import { scheduleData } from '../scheduleData'
 
 function SchoolTerm( props ) {
 
-    // scheduleData comes in an array of terms
-    const term = scheduleData.terms[0]; // this gets the whole first term
-    // NOTE: this only displays the data from Term 1 right now because that is all we have in scheduleData.js, need to make more sample terms
+    const termString = props.name; // Example string
+    const termNumber = parseInt(termString.replace(/^\D+/g, ''), 10);
+    const actualTermNumber = termNumber - 1;
+    const term = scheduleData.terms[actualTermNumber];
+
+    if (!term) {
+        console.error("Term data is undefined");
+        return ( // Note the addition of parentheses around the JSX
+                <div>Term data not available.</div>
+            );
+        }
 
 
     const renderDaySchedule = (day) => {
@@ -25,11 +34,13 @@ function SchoolTerm( props ) {
     ));
   };
 
+
   return (
     <div style={{ display: 'flex' }}>
       {term.days.map((day, dayIndex) => (
         <Box key={dayIndex} component="section" sx={{ flex: '1', p: 2, border: '1px solid grey', height: 400 }}>
-          <h3>{day.label} {props.name}</h3>
+         <h3>{day.label} {props.name}</h3>
+          {/*<h3>{day.label} {props.name}</h3>*/}
           {renderDaySchedule(day)}
         </Box>
       ))}
