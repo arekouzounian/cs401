@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import { scheduleData } from '../scheduleData'
+import { Course } from './Course';
 
 function SchoolTerm( props ) {
 
@@ -26,7 +27,8 @@ function SchoolTerm( props ) {
           <>
             <p>{block.label}: {block.startTime} - {block.endTime}</p>
             {block.courses.map((course, courseIndex) => (
-              <p key={courseIndex}>Course: {course.code}</p>
+              // <p key={courseIndex}>Course: {course.code}</p> // turn into course component w/ handleClick func that displays students
+              <p key={courseIndex}><Course code={course.code} students={course.students}></Course></p>
             ))}
           </>
         )}
@@ -38,7 +40,7 @@ function SchoolTerm( props ) {
   return (
     <div style={{ display: 'flex' }}>
       {term.days.map((day, dayIndex) => (
-        <Box key={dayIndex} component="section" sx={{ flex: '1', p: 2, border: '1px solid grey', height: 400 }}>
+        <Box key={dayIndex} component="section" sx={{ flex: '1', p: 2, border: '1px solid grey', height: 'auto' }}>
          <h3>{day.label} {props.name}</h3>
           {/*<h3>{day.label} {props.name}</h3>*/}
           {renderDaySchedule(day)}
