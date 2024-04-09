@@ -5,7 +5,7 @@ import { Course } from './Course';
 
 function SchoolTerm( props ) {
 
-    const termString = props.name; // Example string
+    const termString = props.name;
     const termNumber = parseInt(termString.replace(/^\D+/g, ''), 10);
     const actualTermNumber = termNumber - 1;
     const term = scheduleData.terms[actualTermNumber];
