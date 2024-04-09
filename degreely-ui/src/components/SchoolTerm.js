@@ -12,7 +12,7 @@ function SchoolTerm( props ) {
 
     if (!term) {
         console.error("Term data is undefined");
-        return ( // Note the addition of parentheses around the JSX
+        return ( 
                 <div>Term data not available.</div>
             );
         }
@@ -27,7 +27,6 @@ function SchoolTerm( props ) {
           <>
             <p>{block.label}: {block.startTime} - {block.endTime}</p>
             {block.courses.map((course, courseIndex) => (
-              // <p key={courseIndex}>Course: {course.code}</p> // turn into course component w/ handleClick func that displays students
               <p key={courseIndex}><Course code={course.code} students={course.students}></Course></p>
             ))}
           </>
